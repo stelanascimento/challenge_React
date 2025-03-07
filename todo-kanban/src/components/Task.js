@@ -1,4 +1,4 @@
-function Task({ task, onMove, onDelete, status }) {
+function Task({ task, onMove, onDelete, onEdit, status }) {
   // Define a cor do background com base na coluna (status)
   const getBackgroundColor = () => {
     switch (status) {
@@ -17,23 +17,25 @@ function Task({ task, onMove, onDelete, status }) {
     <div
       className="task"
       style={{ backgroundColor: getBackgroundColor() }}
+      onClick={() => onEdit(task)}
     >
       <div>
         <h3>{task.title}</h3>
+        <p>{task.description}</p>
         <span
           className="priority-badge"
           style={{
             backgroundColor:
               task.priority === "high"
-                ? "#ff4d4d"
+                ? "none"
                 : task.priority === "medium"
-                ? "#ffd700"
-                : "#32cd32",
+                ? "none"
+                : "none",
+            border: "1px solid",
             color: "#fff",
             padding: "4px 8px",
             borderRadius: "1px",
             fontSize: "0.9rem",
-            
           }}
         >
           {task.priority === "high"
@@ -42,14 +44,12 @@ function Task({ task, onMove, onDelete, status }) {
             ? "Média"
             : "Baixa"}
         </span>
-        <p>{task.description}</p>
       </div>
 
-      <div>
-        <button onClick={() => onDelete(task.id)}>Excluir</button>
-        <button onClick={() => onMove(task, "prev")}>←</button>
-        <button onClick={() => onMove(task, "next")}>→</button>
-      </div>
+      {/* <div>
+        <button onClick={(e) => { e.stopPropagation(); onMove(task, "prev"); }}>←</button>
+        <button onClick={(e) => { e.stopPropagation(); onMove(task, "next"); }}>→</button>
+      </div> */}
     </div>
   );
 }

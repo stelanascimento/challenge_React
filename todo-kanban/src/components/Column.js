@@ -1,6 +1,6 @@
 import Task from "./Task";
 
-function Column({ title, tasks, onMove, onDelete }) {
+function Column({ title, tasks, onMove, onDelete, onEdit }) {
   // Define o status baseado no título da coluna
   const status =
     title === "A Fazer"
@@ -18,6 +18,7 @@ function Column({ title, tasks, onMove, onDelete }) {
           task={task}
           onMove={onMove}
           onDelete={onDelete}
+          onEdit={onEdit}
           status={status} // Passa o status para cada tarefa
         />
       ))}
