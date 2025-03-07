@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   background: #000000;
   color: white;
   margin: 0;
@@ -15,6 +15,14 @@ h1 {
   gap: 20px;
   padding: 20px;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.colunas{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
 }
 
 .column {
@@ -25,16 +33,67 @@ h1 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.task {
-  background: #e2e8f0;
-  padding: 8px;
+.task select {
+  padding: 4px;
   border-radius: 4px;
-  margin: 8px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  cursor: pointer;
 }
+
+.task-input {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.task-input input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 30%;
+}
+
+.task-input button {
+  padding: 8px 16px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task {
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  
+}
+
+.priority-badge {
+  margin-left: 8px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.task button {
+  margin-left: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+
+
+
+
 
 button {
   cursor: pointer;
 }
+
