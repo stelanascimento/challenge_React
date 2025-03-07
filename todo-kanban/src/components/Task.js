@@ -1,4 +1,3 @@
-// src/components/Task.js
 function Task({ task, onMove, onDelete, status }) {
   // Define a cor do background com base na coluna (status)
   const getBackgroundColor = () => {
@@ -43,6 +42,7 @@ function Task({ task, onMove, onDelete, status }) {
             ? "Média"
             : "Baixa"}
         </span>
+        <p>{task.description}</p>
       </div>
 
       <div>
